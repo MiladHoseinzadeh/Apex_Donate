@@ -5,11 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.tailwindcss.com"></script>
 		<title>
-			Apex Donation | {% block page_title %}{% endblock page_title %}
+			Apex Donate | {% block page_title %}{% endblock page_title %}
 		</title>
 	</head>
 
 	<body class="bg-slate-400">
+		{% include 'navbar.html' %}
+		
 		{% block main_content %} {% endblock main_content %}
 	</body>
 </html>
