@@ -5,7 +5,11 @@
 
 	<div class="space-x-2">
 		<a href="#" class="py-4 px-4 text-lg text-white font-bold">Creators</a>
-		<a href="{% url 'accounts:login' %}" class="py-4 px-4 text-lg text-white font-bold">Log in</a>
-		<a href="#" class="py-4 px-4 text-lg text-white font-bold bg-sky-600 rounded-lg">Sign up</a>
+		
+		{% if not request.user.is_authenticated %}
+			<a href="{% url 'accounts:login' %}" class="py-4 px-4 text-lg text-white font-bold">Log in</a>
+			<a href="{% url 'accounts:signup' %}" class="py-4 px-4 text-lg text-white font-bold bg-sky-600 rounded-lg hover:bg-sky-700 active:bg-sky-800">Sign up</a>
+		{% endif %}
+			
 	</div>
 </nav>
